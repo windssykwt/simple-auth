@@ -9,7 +9,7 @@ body{
     transition: background-color 0.5s ease, color 0.5s ease;
 }
 .login-container{
-    background-color: #293244;
+    background-color: #0c101a;
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 20px 900px 40px rgba(8, 41, 228, 0.164);
@@ -18,7 +18,7 @@ body{
 }
 h1{
     text-align: center;
-    color: #dfd8ff;
+    color: #ffffffd7;
     transition: all 0.5s ease;
 }
 form {
@@ -28,7 +28,7 @@ form {
 label {
     margin-top: 1rem;
     margin-bottom: 0.5rem;
-    color: #dfd8ff;
+    color: #ffffff;
     font-synthesis: weight;
     transition: all 0.5s ease;
 }
@@ -142,4 +142,44 @@ body.light-mode {
 .light-mode .toggle-button:hover {
     background-color: #ffbb007c;
     border-radius: 40px;
+}
+
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.5;
+    animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0) translateX(0);
+    }
+    25% {
+        transform: translateY(-60px) translateX(30px);
+    }
+    50% {
+        transform: translateY(-100px) translateX(-45px);
+    }
+    75% {
+        transform: translateY(-60px) translateX(45px);
+    }
+}
+
+.light-mode .particle {
+    background-color: rgba(0, 123, 255, 0.2);
+}
+
+body:not(.light-mode) .particle {
+    background-color: rgba(96, 170, 255, 0.2);
 }
