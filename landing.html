@@ -3,46 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
+    <link rel="stylesheet" href="style.css">
     <title>Welcome</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #13171f;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            margin: 0;
-            color: #dfd8ff;
-        }
+        /* pindahkan gaya ini ke file style.css jika ingin */
         .welcome-container {
             text-align: center;
-        }
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
         }
         #username {
             font-size: 3rem;
             color: #007bff;
         }
-        button {
-            margin-top: 2rem;
-            padding: 0.75rem 1.5rem;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            font-size: 1rem;
-        }
-        button:hover {
-            background-color: #0056b3;
+        .light-mode #username {
+            color: #0056b3;
         }
     </style>
 </head>
 <body>
+    <div class="toggle-container">
+        <button class="toggle-button" onclick="toggleMode()">🌙</button>
+    </div>
     <div class="welcome-container">
         <h1>Halo banh</h1>
         <div id="username"></div>
@@ -50,7 +31,7 @@
     </div>
 
     <script>
-        // Tampilkan username
+        // tampilkan username
         const username = localStorage.getItem('username');
         if (username) {
             document.getElementById('username').textContent = username;
@@ -58,10 +39,26 @@
             window.location.href = 'login.html'; // Redirect ke login jika tidak ada username
         }
 
-        // Fungsi logout
+        // fungsi logout
         function logout() {
             localStorage.removeItem('username');
             window.location.href = 'login.html';
+        }
+
+        // fungsi toggle mode
+        function toggleMode() {
+            const body = document.body;
+            const button = document.querySelector('.toggle-button');
+            body.classList.toggle('light-mode');
+            button.textContent = body.classList.contains('light-mode') ? '☀️' : '🌙';
+            localStorage.setItem('mode', body.classList.contains('light-mode') ? 'light' : 'dark');
+        }
+
+        // fet mode berdasarkan preferensi yang tersimpan
+        const savedMode = localStorage.getItem('mode');
+        if (savedMode === 'light') {
+            document.body.classList.add('light-mode');
+            document.querySelector('.toggle-button').textContent = '☀️';
         }
     </script>
 </body>

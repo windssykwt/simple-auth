@@ -1,4 +1,4 @@
-// Fungsi untuk menangani proses login
+// fungsi untuk menangani proses login
 function handleLogin(event) {
     event.preventDefault();
     const username = document.getElementById('username').value;
@@ -14,12 +14,12 @@ function handleLogin(event) {
     .then(response => response.json())
     .then(data => {
         if (data.message === 'Login successful') {
-            console.log('Login berhasil!');
+            console.log('Login success!');
             localStorage.setItem('username', username);
             window.location.href = 'landing.html';
         } else {
-            console.log('Login gagal: ' + data.error);
-            alert('Login gagal: ' + data.error);
+            console.log('Login failed: ' + data.error);
+            alert('Login failed: ' + data.error);
         }
     })
     .catch(error => {
@@ -29,7 +29,7 @@ function handleLogin(event) {
     });
 }
 
-// Fungsi untuk menangani proses pendaftaran
+// fungsi untuk menangani proses pendaftaran
 function handleRegister(event) {
     event.preventDefault();
     const username = document.getElementById('username').value;
@@ -53,7 +53,7 @@ function handleRegister(event) {
     .then(data => {
         if (data.message) {
             alert('Pendaftaran berhasil!');
-            window.location.href = 'login.html'; // Arahkan ke halaman login
+            window.location.href = 'login.html'; // arahkan ke halaman login
         } else {
             alert('Pendaftaran gagal: ' + data.error);
         }

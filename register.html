@@ -8,6 +8,9 @@
     <title>Register</title>
 </head>
 <body>
+    <div class="toggle-container">
+        <button class="toggle-button" onclick="toggleMode()">🌙</button>
+    </div>
     <div class="login-container">
         <h1>Daftar</h1>
         <form id="registerForm" onsubmit="handleRegister(event)">
@@ -28,5 +31,13 @@
         </form>
     </div>
     <script src="function_auth.js"></script>
+    <script>
+        function toggleMode() {
+            const body = document.body;
+            const button = document.querySelector('.toggle-button');
+            body.classList.toggle('light-mode');
+            button.textContent = body.classList.contains('light-mode') ? '☀️' : '🌙';
+        }
+    </script>
 </body>
 </html>

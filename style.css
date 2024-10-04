@@ -6,17 +6,20 @@ body{
     align-items: center;
     height: 100vh;
     margin: 0;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 .login-container{
     background-color: #293244;
     padding: 2rem;
     border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 900px 40px rgba(8, 41, 228, 0.164);
     width: 300px;
+    transition: all 0.5s ease;
 }
 h1{
     text-align: center;
     color: #dfd8ff;
+    transition: all 0.5s ease;
 }
 form {
     display: flex;
@@ -27,6 +30,7 @@ label {
     margin-bottom: 0.5rem;
     color: #dfd8ff;
     font-synthesis: weight;
+    transition: all 0.5s ease;
 }
 input {
     padding: 0.74rem 1rem;
@@ -39,7 +43,7 @@ input {
 }
 
 input:focus {
-    box-shadow: 0 0 7px rgb(69, 153, 243);
+    box-shadow: 0 0 3px rgb(69, 153, 243);
 
 
 }
@@ -54,7 +58,8 @@ button {
     transition: background-color 0.3s;
 }
 button:hover {
-    background-color: #0056b3;
+    background-color: #0044ff;
+    border-radius: 4px;
 }
 a{
     text-decoration: none;
@@ -65,4 +70,76 @@ a{
 }
 a:hover{
     color: #175597;
+}
+
+
+body.light-mode {
+    background-color: #f0f2f5;
+}
+
+.light-mode .login-container {
+    background-color: #ffffff;
+    box-shadow: 0 20px 900px 40px rgba(0, 35, 231, 0.171);
+}
+
+.light-mode h1,
+.light-mode label {
+    color: #333333;
+}
+
+.light-mode input {
+    background-color: #ffffff;
+    color: #333333;
+    border: 1px solid #d1d1d1ab;
+}
+
+.toggle-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+}
+
+.toggle-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    outline: none;
+    transition: opacity 0.3s ease;
+    border-radius: 30px;
+}
+
+.toggle-button:hover {
+    opacity: 0.8;
+    border-radius: 40px;
+    background-color: #1c7eff73;
+}
+
+
+
+.light-mode body {
+    background-color: #f0f2f5;
+    color: #333333;
+}
+
+.light-mode .welcome-container h1 {
+    color: #333333;
+}
+
+.light-mode button {
+    background-color: #007bff;
+    
+}
+
+.light-mode button:hover {
+    background-color: #0044ff;
+    border-radius: 4px;
+}
+.light-mode .toggle-button {
+    background-color: #b3920000;
+    border-radius: 30px;
+}
+.light-mode .toggle-button:hover {
+    background-color: #ffbb007c;
+    border-radius: 40px;
 }
