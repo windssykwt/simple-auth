@@ -13,12 +13,10 @@ function handleLogin(event) {
     })
     .then(response => response.json())
     .then(data => {
-        if (data.message === 'OTP sent') {
-            localStorage.setItem('tempUserId', data.userId);
-            alert('OTP telah dikirim ke email Anda. Silakan masukkan OTP.');
-            // Tampilkan form OTP
-            document.getElementById('loginForm').style.display = 'none';
-            document.getElementById('otpForm').style.display = 'block';
+        if (data.message === 'Login successful') {
+            console.log('Login berhasil!');
+            localStorage.setItem('username', username);
+            window.location.href = 'landing.html';
         } else {
             console.log('Login gagal: ' + data.error);
             alert('Login gagal: ' + data.error);
@@ -28,38 +26,6 @@ function handleLogin(event) {
         console.error('Error:', error);
         console.log('Terjadi kesalahan saat login');
         alert('Terjadi kesalahan saat login');
-    });
-}
-
-// Fungsi untuk menangani verifikasi OTP
-function handleOTPVerification(event) {
-    event.preventDefault();
-    const otp = document.getElementById('otp').value;
-    const userId = localStorage.getItem('tempUserId');
-
-    fetch('http://localhost:3000/verify-otp', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ userId, otp }),
-    })
-    .then(response => response.json())
-    .then(data => {
-        if (data.message === 'Login successful') {
-            console.log('Login berhasil!');
-            localStorage.setItem('username', document.getElementById('username').value);
-            localStorage.removeItem('tempUserId');
-            window.location.href = 'landing.html';
-        } else {
-            console.log('Verifikasi OTP gagal: ' + data.error);
-            alert('Verifikasi OTP gagal: ' + data.error);
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-        console.log('Terjadi kesalahan saat verifikasi OTP');
-        alert('Terjadi kesalahan saat verifikasi OTP');
     });
 }
 
@@ -98,5 +64,3 @@ function handleRegister(event) {
         alert('Terjadi kesalahan saat mendaftar');
     });
 }
-
-// Hapus window.onload karena kita tidak memerlukan inisialisasi tampilan lagi
