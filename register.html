@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Register</title>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Daftar</h1>
+        <form id="registerForm" onsubmit="handleRegister(event)">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Username">
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Email">
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Password">
+
+            <label for="confirm-password">Re-type Password</label>
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="Re-type password">
+
+            <button type="submit">Register</button>
+            <a href="login.html">Already have an account? Login</a>
+        </form>
+    </div>
+    <script src="function_auth.js"></script>
+</body>
+</html>
