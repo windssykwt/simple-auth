@@ -37,7 +37,16 @@
             const button = document.querySelector('.toggle-button');
             body.classList.toggle('light-mode');
             button.textContent = body.classList.contains('light-mode') ? '☀️' : '🌙';
+            localStorage.setItem('mode', body.classList.contains('light-mode') ? 'light' : 'dark');
         }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedMode = localStorage.getItem('mode');
+            if (savedMode === 'light') {
+                document.body.classList.add('light-mode');
+                document.querySelector('.toggle-button').textContent = '☀️';
+            }
+        });
     </script>
 </body>
 </html>
