@@ -12,7 +12,7 @@ body{
     background-color: #0c101a;
     padding: 2rem;
     border-radius: 8px;
-    /* box-shadow: 0 20px 900px 40px rgba(8, 41, 228, 0.164); silakan dipilih salah satu shadow */
+    /* box-shadow: 0 20px 900px 40px rgba(8, 41, 228, 0.164); silakan pilih salah satu shadow */
     box-shadow: 
     20px 20px 40px rgba(8, 41, 228, 0.24),
     -20px 20px 40px rgba(128, 0, 128, 0.24),
@@ -166,8 +166,8 @@ body.light-mode {
 .particle {
     position: absolute;
     border-radius: 50%;
-    opacity: 0.5;
-    animation: float 2s infinite ease-in-out;
+    opacity: 1;
+    animation: float 0.08s infinite ease-in-out;
 }
 
 @keyframes float {
@@ -175,13 +175,13 @@ body.light-mode {
         transform: translateY(0) translateX(0);
     }
     25% {
-        transform: translateY(-60px) translateX(30px);
+        transform: translateY(-120px) translateX(60px);
     }
     50% {
-        transform: translateY(-100px) translateX(-45px);
+        transform: translateY(-200px) translateX(-90px);
     }
     75% {
-        transform: translateY(-60px) translateX(45px);
+        transform: translateY(-120px) translateX(90px);
     }
 }
 
@@ -190,5 +190,5 @@ body.light-mode {
 }
 
 body:not(.light-mode) .particle {
-    background-color: rgba(96, 170, 255, 0.2);
+    background-color: rgb(255, 255, 255);
 }

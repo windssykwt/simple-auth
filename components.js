@@ -7,7 +7,7 @@ function createParticles() {
     for (let i = 0; i < 50; i++) {
         const particle = document.createElement('div');
         particle.className = 'particle';
-        particle.style.width = `${Math.random() * 10 + 5}px`;
+        particle.style.width = `${Math.random() * 3 + 1}px`;
         particle.style.height = particle.style.width;
         particle.style.left = `${Math.random() * 100}%`;
         particle.style.top = `${Math.random() * 100}%`;
