@@ -35,19 +35,3 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('.toggle-button').textContent = '☀️';
     }
 });
-
-// fungsi toggle mode
-function toggleMode() {
-    const body = document.body;
-    const button = document.querySelector('.toggle-button');
-    body.classList.toggle('light-mode');
-    button.textContent = body.classList.contains('light-mode') ? '☀️' : '🌙';
-    localStorage.setItem('mode', body.classList.contains('light-mode') ? 'light' : 'dark');
-}
-
-// fet mode berdasarkan preferensi yang tersimpan
-const savedMode = localStorage.getItem('mode');
-if (savedMode === 'light') {
-    document.body.classList.add('light-mode');
-    document.querySelector('.toggle-button').textContent = '☀️';
-}
