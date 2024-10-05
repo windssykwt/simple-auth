@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="animation.js"></script>
+    <script src="components.js"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap">
     <title>Register</title>
 </head>
@@ -32,22 +32,5 @@
         </form>
     </div>
     <script src="function_auth.js"></script>
-    <script>
-        function toggleMode() {
-            const body = document.body;
-            const button = document.querySelector('.toggle-button');
-            body.classList.toggle('light-mode');
-            button.textContent = body.classList.contains('light-mode') ? '☀️' : '🌙';
-            localStorage.setItem('mode', body.classList.contains('light-mode') ? 'light' : 'dark');
-        }
-
-        document.addEventListener('DOMContentLoaded', () => {
-            const savedMode = localStorage.getItem('mode');
-            if (savedMode === 'light') {
-                document.body.classList.add('light-mode');
-                document.querySelector('.toggle-button').textContent = '☀️';
-            }
-        });
-    </script>
 </body>
 </html>
