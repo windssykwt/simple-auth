@@ -9,4 +9,8 @@ or
 run: `node server.js` to start SQLite
 
 # Preview
-![preview](https://cdn.linxiopt.com/upload/simple-auth.mp4)
+### Dark mode
+![preview](https://cdn.linxiopt.com/upload/file622.png)
+
+### Light mode
+![preview](https://cdn.linxiopt.com/upload/file623.png)
