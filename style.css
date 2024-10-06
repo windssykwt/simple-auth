@@ -159,7 +159,7 @@ body.light-mode {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1;
+    z-index: 2;
     pointer-events: none;
 }
 
@@ -186,9 +186,50 @@ body.light-mode {
 }
 
 .light-mode .particle {
-    background-color: rgba(0, 123, 255, 0.2);
+    background-color: rgb(250, 133, 0);
 }
 
 body:not(.light-mode) .particle {
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(66, 211, 255);
+}
+
+.split-screen {
+    display: flex;
+    flex-direction: row;
+}
+
+.split-screen .login-container {
+    flex: 0 1 auto; 
+    width: 300px; 
+    margin-right: 15%;
+}
+
+#moon-container {
+    display: none;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    margin-right: 20%;
+}
+
+.split-screen #moon-container {
+    display: flex;
+}
+
+#moon {
+    width: 350px;
+    height: 350px;
+}
+
+#moon-container img {
+    transition: all 0.5s ease;
+}
+
+.light-mode #moon-container img {
+    transform: rotate(360deg) scale(1.1);
+    filter: brightness(1.2) saturate(1.2);
+}
+
+#moon-container img.transitioning {
+    opacity: 0;
 }
