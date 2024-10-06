@@ -14,3 +14,6 @@ run: `node server.js` to start SQLite
 
 ### Light mode
 ![preview](https://cdn.linxiopt.com/upload/file623.png)
+
+### Split Screen mode
+![preview](https://cdn.linxiopt.com/upload/file630.png)
