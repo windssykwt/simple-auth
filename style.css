@@ -91,9 +91,14 @@ body.light-mode {
         -20px -20px 40px rgba(255, 165, 0, 0.24);
 }
 
-.light-mode h1,
+.light-mode h1{
+    color: #333333;
+    font-weight: 530;
+}
+
 .light-mode label {
     color: #333333;
+    font-weight: 430;
 }
 
 .light-mode input {
